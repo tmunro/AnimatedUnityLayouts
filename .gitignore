@@ -1,0 +1,14 @@
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+Temp
+/Library
+/obj
+*.apk
+tags
+Assembly-CSharp-vs.csproj.FilesWrittenAbsolute.txt
+BetterEditorPrefs.asset
+launch.json
+/obj
