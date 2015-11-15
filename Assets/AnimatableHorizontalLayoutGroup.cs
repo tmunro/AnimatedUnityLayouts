@@ -5,20 +5,21 @@ using System.Collections;
 
 [RequireComponent(typeof(RectTransform))]
 [ExecuteInEditMode]
-public class AnimatableVerticalLayoutGroup : VerticalLayoutGroup
+public class AnimatableHorizontalLayoutGroup : HorizontalLayoutGroup
 {
-    public bool active = true;
+    [SerializeField]
+    protected bool _active = true;
 
     public override void SetLayoutHorizontal()
     {
-        if(!active)
+        if(!_active)
             return;
         SetChildrenAlongAxis(0, true);
     }
 
     public override void SetLayoutVertical()
     {
-        if(!active)
+        if(!_active)
             return;
         SetChildrenAlongAxis(1, true);
     }
@@ -33,7 +34,6 @@ public class AnimatableVerticalLayoutGroup : VerticalLayoutGroup
 
         var rectTransform = (RectTransform)transform;
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, preferredWidth);
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, preferredHeight);
 
         CalculateLayoutInputVertical();
         CalculateLayoutInputHorizontal();
@@ -41,6 +41,5 @@ public class AnimatableVerticalLayoutGroup : VerticalLayoutGroup
         SetChildrenAlongAxis(1, true);
 
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
     }
 }
