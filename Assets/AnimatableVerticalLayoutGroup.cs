@@ -32,7 +32,7 @@ public class AnimatableVerticalLayoutGroup : VerticalLayoutGroup
         yield return new WaitForEndOfFrame();
 
         var rectTransform = (RectTransform)transform;
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, preferredWidth);
+
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, preferredHeight);
 
         CalculateLayoutInputVertical();
@@ -40,7 +40,6 @@ public class AnimatableVerticalLayoutGroup : VerticalLayoutGroup
         SetChildrenAlongAxis(0, true);
         SetChildrenAlongAxis(1, true);
 
-        rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
     }
 }

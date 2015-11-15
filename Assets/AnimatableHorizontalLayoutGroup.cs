@@ -14,14 +14,14 @@ public class AnimatableHorizontalLayoutGroup : HorizontalLayoutGroup
     {
         if(!_active)
             return;
-        SetChildrenAlongAxis(0, true);
+        SetChildrenAlongAxis(0, false);
     }
 
     public override void SetLayoutVertical()
     {
         if(!_active)
             return;
-        SetChildrenAlongAxis(1, true);
+        SetChildrenAlongAxis(1, false);
     }
 
     protected override void OnEnable()
@@ -37,8 +37,8 @@ public class AnimatableHorizontalLayoutGroup : HorizontalLayoutGroup
 
         CalculateLayoutInputVertical();
         CalculateLayoutInputHorizontal();
-        SetChildrenAlongAxis(0, true);
-        SetChildrenAlongAxis(1, true);
+        SetChildrenAlongAxis(0, false);
+        SetChildrenAlongAxis(1, false);
 
         rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
     }
